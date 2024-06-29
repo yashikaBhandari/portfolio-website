@@ -25,7 +25,6 @@ function Home() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        
       >
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">

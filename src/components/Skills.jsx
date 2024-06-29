@@ -45,6 +45,7 @@ function Skills() {
     >
       <div>
         <h1 className="text-3xl font-bold mb-5">Skills</h1>
+        
         <p className="  ">
           I've honed these skills below ~~
         </p>
