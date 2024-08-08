@@ -6,22 +6,25 @@ function PortFolio() {
       id: 1,
       logo: "https://icons.veryicon.com/png/128/education-technology/artificial-intelligence-2/lvwang-content-security.png",
       name: "Sentiment analysis",
-      description:"Twitter us inline sentiment analysis : analyzes the sentiment or emotion of tweets. By using natural language processing and machine learning algorithms"
+      description: "Twitter us inline sentiment analysis : analyzes the sentiment or emotion of tweets. By using natural language processing and machine learning algorithms",
+      githubLink: "https://github.com/yashikaBhandari/Sentiment-_Analysis.git", // Add your GitHub repo link here
     },
     {
       id: 2,
       logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAgfcikbiD1L_5vGdi0dlUl_LLe0HFp-FHyw&usqp=CAU",
       name: "Ai trip planner",
-      description:"An AI Trip Planner app is a cutting-edge travel assistant designed to simplify the process of planning and organizing trips. Leveraging artificial intelligence,used mern stack with integration of AI"
+      description: "An AI Trip Planner app is a cutting-edge travel assistant designed to simplify the process of planning and organizing trips. Leveraging artificial intelligence,used mern stack with integration of AI",
+      githubLink: "https://github.com/friedavocadoes/VoyagAI.git", // Add your GitHub repo link here
     },
     {
       id: 3,
       logo: "https://www.tridentspark.com/wp-content/uploads/2023/07/mern-stack-icon-1.png",
-      name: "voting app ",
-      description:"full-fledged application using mern stack! implemented web socket for instant updates and authentication features to ensure secur participation .used react for dynamic user interface ."
+      name: "Proton-Screening-Test",
+      description: "full-fledged application using mern stack! implemented web socket for instant updates and authentication features to ensure secur participation .used react for dynamic user interface.",
+      githubLink: "https://github.com/yashikaBhandari/Proton-Screening-Test.git", // Add your GitHub repo link here
     },
-   
   ];
+
   return (
     <div
       name="Projects"
@@ -31,7 +34,7 @@ function PortFolio() {
         <h1 className="text-3xl font-bold mb-5">Projects</h1>
         <span className=" text-2xl underline font-semibold">my Featured Projects</span>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3 my-5">
-          {cardItem.map(({ id, logo, name ,description}) => (
+          {cardItem.map(({ id, logo, name, description, githubLink }) => (
             <div
               className="md:w-[300px] md:h-[320px] border-[2px] rounded-lg shadow-lg p-1 cursor-pointer hover:scale-110 duration-300"
               key={id}
@@ -43,17 +46,20 @@ function PortFolio() {
               />
               <div>
                 <div className="px-2 font-bold text-xl mb-2">{name}</div>
-                <p className="px-2 text-gray-700 text-sm">{description}
-             
-                </p>
+                <p className="px-2 text-gray-700 text-sm">{description}</p>
               </div>
-              <div className=" px-3 py-2 space-x-3 flex  mt-auto">
+              <div className="px-3 py-2 space-x-3 flex mt-auto">
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded">
-                  video
+                  Video
                 </button>
-                <button className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded">
+                <a
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-500 hover:bg-green-700 text-white font-bold px-4 py-2 rounded"
+                >
                   Source code
-                </button>
+                </a>
               </div>
             </div>
           ))}
