@@ -21,7 +21,7 @@ function Home() {
         name="Home"
         className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
         style={{
-            backgroundImage: `url('https://img.freepik.com/free-vector/minimalist-blue-brush-strokes-background_91008-263.jpg')`, // Replace with your image URL
+            backgroundImage: `url('')`, // Replace with your image URL
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

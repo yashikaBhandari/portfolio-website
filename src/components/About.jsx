@@ -6,7 +6,7 @@ function About() {
       name="About"
       className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-20"
       style={{
-        backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_dHW0FQwYXVkuLw5itxzGVAZV-eNKoyimw&usqp=CAU')`,
+        backgroundImage: `url('')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
