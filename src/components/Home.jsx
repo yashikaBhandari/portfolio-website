@@ -21,7 +21,7 @@ function Home() {
         name="Home"
         className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
         style={{
-            backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG_dHW0FQwYXVkuLw5itxzGVAZV-eNKoyimw&usqp=CAU')`, // Replace with your image URL
+            backgroundImage: `url('https://img.freepik.com/free-vector/minimalist-blue-brush-strokes-background_91008-263.jpg')`, // Replace with your image URL
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -86,7 +86,7 @@ function Home() {
           </div>
           <div className="md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1">
             <img
-              src="https://static.thenounproject.com/png/3920393-200.png"
+              src="https://cdn-icons-png.flaticon.com/512/10777/10777541.png"
               className="rounded-full md:w-[450px] md:h-[450px]"
               alt=""
             />

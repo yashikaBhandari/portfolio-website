@@ -61,7 +61,7 @@ function About() {
         <br />
         {/* Resume Download Button */}
         <a
-          href="/resume.pdf"  // Update this path to your actual resume file
+          href="/finalres.pdf"  // Update this path to your actual resume file
           download="yashika_bhandari_resume.pdf"  // This specifies the name of the file to be downloaded
           className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         >
