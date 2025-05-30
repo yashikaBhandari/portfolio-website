@@ -1,75 +1,71 @@
-import React from "react";
+import React from 'react';
+import { FaMapMarkerAlt, FaGraduationCap, FaEnvelope, FaStar, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-function About() {
+export default function About() {
   return (
-    <div
-      name="About"
-      className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-20"
-      style={{
-        backgroundImage: `url('')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+    <section
+      id="about"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
     >
-      <div>
-        <h1 className="text-3xl font-bold mb-5">About</h1>
-        <h2 className="text-2xl font-semibold mb-5">~ Know me better ~</h2>
-        <p>
-          Hello, I'm Yashika, currently a B.tech student, passionate about programming with a keen eye in development. With a background in computer science, I strive to create impactful and visually stunning software solutions that leave a lasting impression.
+      <div className="max-w-4xl text-center mb-10">
+        <h2 className="text-4xl font-bold mb-4 text-blue-600">About Me</h2>
+        <p className="text-lg leading-relaxed">
+          An innovative, visionary, and workaholic individual determined to simplify complex processes at the budding stage. Always curious to learn endlessly. Data Science & ML enthusiast with good command of Python and C++, with a deep understanding of Big Data and Machine Learning and their application through practical data analysis.
         </p>
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Education & Training
-        </h1>
-        <span>[B.TECH-CSE], [Lovely Professional University], [2026]-present</span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Skills & Expertise
-        </h1>
-        <span>
-          Proficient in programming languages [Python, C/C++, JavaScript] and technologies [MERN stack]. Strong grasp of Design Principles and Concepts, Excellent problem-solving skills, Effective communicator and collaborator.
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Professional Experience
-        </h1>
-        <span>
-          Presently working as an intern, Sheshya (New Delhi), Full Stack Developer
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Achievements & Awards
-        </h1>
-        <span>
-          Full Stack Development, LinkedIn Learning, 2023
-          <br />
-          Data Structures and Algorithms, Udemy, 2023
-          <br />
-          National Level Gold Medalist in Handwriting Competition, Mother Teresa Organisation, 2018
-        </span>
-        <br />
-        <br />
-        <h1 className="text-green-600 font-semibold text-xl">
-          Mission Statement
-        </h1>
-        <p>
-          My mission is to leverage my skills and creativity to deliver innovative technical solutions that exceed client expectations and contribute positively to the digital landscape. I am committed to continuous learning and growth, always seeking new challenges and opportunities to expand my horizons.
-        </p>
-        <br />
-        {/* Resume Download Button */}
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-4xl">
+        <div className="flex items-center gap-4">
+          <FaGraduationCap className="text-blue-600 text-xl" />
+          <p><strong>Graduation:</strong> B.Tech (CSE)</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <FaMapMarkerAlt className="text-blue-600 text-xl" />
+          <p><strong>Location:</strong> Kurali, Punjab</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <FaEnvelope className="text-blue-600 text-xl" />
+          <p><strong>Email:</strong> yashikabhandari01@gmail.com</p>
+        </div>
+        <div className="flex items-center gap-4">
+          <FaStar className="text-blue-600 text-xl" />
+          <p><strong>Interests:</strong> Full Stack Dev, ML, Open Source, AI</p>
+        </div>
+      </div>
+
+      {/* Add Social Links here */}
+      <div className="flex justify-center space-x-8 mt-12 text-4xl text-gray-700 dark:text-gray-300">
         <a
-          href="/finalres.pdf"  // Update this path to your actual resume file
-          download="yashika_bhandari_resume.pdf"  // This specifies the name of the file to be downloaded
-          className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          href="https://www.linkedin.com/in/yashika34/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="text-blue-700 hover:text-blue-900 transition-colors duration-300"
         >
-          Download My Resume
+          <FaLinkedin />
+        </a>
+
+        <a
+          href="https://github.com/yashikaBhandari"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          className="hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+        >
+          <FaGithub />
         </a>
       </div>
-    </div>
+
+      <div className="mt-10">
+        <a
+          href="/finalres.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-blue-600 text-white px-6 py-2 rounded-full shadow hover:bg-blue-700 transition"
+        >
+          Download Resume
+        </a>
+      </div>
+    </section>
   );
 }
-
-export default About;

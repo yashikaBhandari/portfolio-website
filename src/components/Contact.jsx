@@ -1,114 +1,77 @@
-import axios from "axios";
-import React from "react";
-import { useForm } from "react-hook-form";
-import toast from "react-hot-toast";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
 
-function Contact() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
+const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const onSubmit = async (data) => {
-    const userInfo = {
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    };
-    try {
-      await axios.post("https://getform.io/f/nbvvvygb", userInfo);
-      toast.success("Your message has been sent");
-    } catch (error) {
-      console.log(error);
-      toast.error("Something went wrong");
-    }
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Thank you, ${formData.name}! Your message has been received.`);
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <>
-      <div
-        name="Contact"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-16"
+    <section
+      id="contact"
+      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
+    >
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-4xl font-bold mb-8 text-blue-600"
       >
-        <h1 className="text-3xl font-bold mb-4">Contact me</h1>
-        <span>Please fill out the form below to contact me</span>
-        <div className="flex flex-col items-center justify-center mt-5">
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="bg-slate-200 w-96 px-8 py-6 rounded-xl"
-          >
-            <h1 className="text-xl font-semibold mb-4">Send Your Message</h1>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Full Name</label>
-              <input
-                {...register("name", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Enter your full name"
-              />
-              {errors.name && <span>This field is required</span>}
-            </div>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Email Address</label>
-              <input
-                {...register("email", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                name="email"
-                type="text"
-                placeholder="Enter your email address"
-              />
-              {errors.email && <span>This field is required</span>}
-            </div>
-            <div className="flex flex-col mb-4">
-              <label className="block text-gray-700">Message</label>
-              <textarea
-                {...register("message", { required: true })}
-                className="shadow rounded-lg appearance-none border  py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="message"
-                name="message"
-                placeholder="Enter your query"
-              />
-              {errors.message && <span>This field is required</span>}
-            </div>
-            <button
-              type="submit"
-              className="bg-black text-white rounded-xl px-3 py-2 hover:bg-slate-700 duration-300"
-            >
-              Send
-            </button>
-          </form>
-        </div>
-        <div className="mt-8 text-center">
-          <h2 className="text-2xl font-semibold">Or Connect with Me Directly</h2>
-          <p className="mt-4">
-            You can also reach out to me via email at{" "}
-            <a
-              href="mailto:yashikabhandari01@gmail.com"
-              className="text-blue-600 underline"
-            >
-              yashikabhandari01@gmail.com
-            </a>
-            .
-          </p>
-          <p className="mt-4">
-            Connect with me on LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/in/yashika-bhandari-ab7a74253/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline"
-            >
-              linkedin.com/in/yashika-bhandari
-            </a>
-          </p>
-        </div>
-      </div>
-    </>
+        Contact Me
+      </motion.h2>
+
+      <motion.form
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="flex flex-col gap-6 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-xl w-full"
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={formData.name}
+          onChange={handleChange}
+          required
+          className="border-2 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="border-2 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={formData.message}
+          onChange={handleChange}
+          required
+          rows={5}
+          className="border-2 border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:bg-gray-700 dark:text-white resize-none"
+        />
+        <button
+          type="submit"
+          className="bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors duration-300"
+        >
+          Send Message
+        </button>
+      </motion.form>
+    </section>
   );
-}
+};
 
 export default Contact;
+

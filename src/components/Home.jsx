@@ -1,102 +1,119 @@
-import React from "react";
+// src/components/Home.jsx
 
-//import pic from "../../public/photo.avif";
+import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
+import { Link } from 'react-scroll';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
-import { FaSquareFacebook } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa";
-import { IoLogoYoutube } from "react-icons/io";
-import { FaTelegram } from "react-icons/fa6";
-
-import { SiMongodb } from "react-icons/si";
-import { SiExpress } from "react-icons/si";
-import { FaReact } from "react-icons/fa";
-import { FaNodeJs } from "react-icons/fa6";
-
-import { ReactTyped } from "react-typed";
-
-function Home() {
+export default function Home() {
   return (
-    <>
-      <div
-        name="Home"
-        className="max-w-screen-2xl container mx-auto px-4 md:px-20 my-28"
-        style={{
-            backgroundImage: `url('')`, // Replace with your image URL
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-      >
-        <div className="flex flex-col md:flex-row">
-          <div className="md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1">
-            <span className="text-xl">Welcome In My Feed</span>
-            <div className="flex space-x-1 text-2xl md:text-4xl">
-              <h1>Hello, I'm a</h1>
-              {/* <span >Developer</span> */}
-              <ReactTyped
-                className="text-red-700 font-bold"
-                strings={["Developer", "Programmer", "Coder"]}
-                typeSpeed={40}
-                backSpeed={50}
-                loop={true}
-              />
-            </div>
-            <br />
-            <p className="text-sm md:text-md text-justify">
-              I'm a passionate developer with a knack for creating dynamic and user-friendly websites. With a background in computer and science , I bring a unique blend of creativity and technical expertise to every project I undertake.
+    <section
+      id="home"
+      className="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-20 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+    >
+      {/* Left side content */}
+      <div className="w-full md:w-1/2 mb-10 md:mb-0 flex flex-col justify-center">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
+          Hi, I'm Yashika 👋
+        </h2>
 
-            </p>
-            <br />
-            {/* social media icons */}
-            <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
-              <div className="  space-y-2">
-                <h1 className="font-bold text-center ">Available on</h1>
-                <ul className="flex space-x-5">
-                  <li>
-                    <a href="https://www.facebook.com/yashika.bhandari.900" target="_blank">
-                      <FaSquareFacebook className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="www.linkedin.com/in/yashika-bhandari-ab7a74253" target="_blank">
-                      <FaLinkedin className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/" target="_blank">
-                      <IoLogoYoutube className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://t.me/" target="_blank">
-                      <FaTelegram className="text-2xl cursor-pointer" />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className=" space-y-2">
-                <h1 className="font-bold text-center">Currently working on</h1>
-                <div className="flex space-x-5">
-                  <SiMongodb className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <SiExpress className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <FaReact className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                  <FaNodeJs className="text-2xl md:text-3xl hover:scale-110 duration-200 rounded-full border-[2px] cursor-pointer" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/10777/10777541.png"
-              className="rounded-full md:w-[450px] md:h-[450px]"
-              alt=""
-            />
-          </div>
+        <TypeAnimation
+          sequence={[
+            'Full Stack Developer',
+            1500,
+            'ML Enthusiast',
+            1500,
+            'Open Source Contributor',
+            1500,
+            'Always Curious to Learn!',
+            1500,
+          ]}
+          speed={50}
+          wrapper="h3"
+          repeat={Infinity}
+          className="text-xl md:text-2xl font-semibold text-blue-600 dark:text-blue-400 mb-6"
+        />
+
+        <p className="text-lg mb-6 max-w-md leading-relaxed">
+          I specialize in crafting scalable web applications with intuitive UI/UX.
+          With a passion for Machine Learning and Open Source, I continuously explore emerging technologies to solve complex problems and build innovative solutions.
+        </p>
+
+        {/* Skill tags */}
+        <div className="flex flex-wrap gap-3 mb-6">
+          {['React', 'Node.js', 'Python', 'TensorFlow', 'NLP', 'MongoDB', 'Express.js'].map((skill) => (
+            <span
+              key={skill}
+              className="bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full font-medium text-sm shadow-sm"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
+
+        {/* Social links */}
+        <div className="flex gap-6 text-2xl mb-6">
+          <a
+            href="https://www.linkedin.com/in/yashika34/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-blue-700 dark:hover:text-blue-400 transition"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            href="https://github.com/yashikaBhandari"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="hover:text-gray-800 dark:hover:text-gray-300 transition"
+          >
+            <FaGithub />
+          </a>
+          <a
+            href="mailto:yashikabhandari01@gmail.com"
+            aria-label="Email"
+            className="hover:text-red-600 dark:hover:text-red-400 transition"
+          >
+            <FaEnvelope />
+          </a>
+        </div>
+
+        <div className="flex gap-4">
+          <a
+            href="/finalres.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 text-white px-5 py-2 rounded-full shadow hover:bg-blue-700 transition"
+          >
+            View Resume
+          </a>
+
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            offset={-70}
+            className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-5 py-2 rounded-full shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition cursor-pointer"
+          >
+            Contact Me
+          </Link>
+        </div>
+
+        <blockquote className="mt-8 italic text-gray-600 dark:text-gray-400 max-w-md">
+          "Code is like humor. When you have to explain it, it’s bad." – Cory House
+        </blockquote>
       </div>
 
-      <hr />
-    </>
+      {/* Right side profile image */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        <img
+          src="/my.jpeg"
+          alt="Yashika Bhandari"
+          className="w-60 h-60 object-cover rounded-full border-4 border-blue-500 shadow-lg hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+    </section>
   );
 }
-
-export default Home;

@@ -1,96 +1,39 @@
-import React, { useState } from "react";
-import pic from "../../public/photo.avif";
-import { AiOutlineMenu } from "react-icons/ai";
-import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-scroll";
-function Navbar() {
-  const [menu, setMenu] = useState(false);
-  const navItems = [
-    {
-      id: 1,
-      text: "Home",
-    },
-    {
-      id: 2,
-      text: "About",
-    },
-    {
-      id: 3,
-      text: "Projects",
-    },
-    {
-      id: 4,
-      text: "Skills",
-    },
-    {
-      id: 5,
-      text: "Contact",
-    },
-  ];
+// src/components/Navbar.jsx
+
+import React, { useState } from 'react';
+import { Link } from 'react-scroll';
+import { FaMoon, FaSun } from 'react-icons/fa';
+
+export default function Navbar() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    document.documentElement.classList.toggle('dark');
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <>
-      <div className="max-w-screen-2xl container mx-auto px-4 md:px-20 h-16 shadow-md fixed top-0 left-0 right-0 z-50 bg-white"
-      >
-        <div className="flex justify-between items-center h-16">
-          <div className=" flex space-x-2">
-            <img src= "https://static.thenounproject.com/png/3920393-200.png" className="h-16 w-15 rounded-full" alt="" />
-            <h1 className="font-semibold text-xl cursor-pointer">
-              <span className="text-green-500 text-3xl">Yashika Bhandari</span>
-              <p className="text-xl">Software Engineer</p>
-            </h1>
-          </div>
-          {/* desktop navbar */}
-          <div>
-            <ul className="hidden md:flex space-x-8">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 cursor-pointer"
-                  key={id}
-                >
-                  <Link
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div onClick={() => setMenu(!menu)} className="md:hidden">
-              {menu ? <IoCloseSharp size={24} /> : <AiOutlineMenu size={24} />}
-            </div>
-          </div>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md transition duration-300 ease-in-out">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-blue-600 dark:text-white cursor-pointer">
+          Yashika Bhandari
+        </h1>
+        <ul className="hidden md:flex space-x-6 text-sm font-semibold text-gray-800 dark:text-gray-200">
+          {['home', 'about', 'projects', 'skills', 'certifications', 'contact'].map((section) => (
+            <li key={section} className="hover:text-blue-600 cursor-pointer transition duration-200">
+              <Link to={section} smooth={true} duration={500} offset={-70}>
+                {section.charAt(0).toUpperCase() + section.slice(1)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center space-x-4">
+          <button onClick={toggleDarkMode} className="text-xl text-gray-700 dark:text-gray-300">
+            {darkMode ? <FaSun /> : <FaMoon />}
+          </button>
         </div>
-        {/* mobile navbar */}
-        {menu && (
-          <div className="bg-white">
-            <ul className="md:hidden flex flex-col h-screen items-center justify-center space-y-3 text-2xl ">
-              {navItems.map(({ id, text }) => (
-                <li
-                  className="hover:scale-105 duration-200 font-semibold cursor-pointer "
-                  key={id}
-                >
-                  <Link
-                    onClick={() => setMenu(!menu)}
-                    to={text}
-                    smooth={true}
-                    duration={500}
-                    offset={-70}
-                    activeClass="active"
-                  >
-                    {text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
       </div>
-    </>
+    </nav>
   );
 }
-
-export default Navbar;
