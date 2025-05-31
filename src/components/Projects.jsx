@@ -5,37 +5,14 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 const projects = [
+
   {
-    title: "AI Trip Planner",
-    image: "/trip.png",
-    description: "Suggests travel plans based on user inputs like location, budget, and interests.",
-    tech: ["MERN", "OpenAI API", "Tailwind"],
-    github: "https://github.com/yashikaBhandari/ai-trip-planner",
-    live: "https://ai-trip-planner.vercel.app",
-  },
-  {
-    title: "Virtual Herbal Garden",
-    image: "/gar.webp",
-    description: "Interactive, educational platform showcasing medicinal plants used in AYUSH.",
-    tech: ["React", "Firebase", "ML"],
-    github: "https://github.com/yashikaBhandari/herbal-garden",
-    live: "https://herbal-garden.vercel.app",
-  },
-  {
-    title: "Sentiment Classifier",
-    image: "/sent.png",
-    description: "Trained ML model on 1.5M Kaggle tweets with 79% accuracy using NLTK & scikit-learn.",
-    tech: ["Python", "NLP", "scikit-learn"],
-    github: "https://github.com/yashikaBhandari/sentiment-analysis",
-    live: "",
-  },
-  {
-    title: "Book Finder",
-    image: "/book.png",
-    description: "Search engine for LeetCode problems with user-submitted solutions.",
-    tech: ["React", "MongoDB", "Express"],
-    github: "https://github.com/yashikaBhandari/leetcode-solutions",
-    live: "https://leetcode-helper.vercel.app",
+    title: "React Notes App",
+    image: "/note.png",
+    description: "Beautiful, animated notes app built using React, Tailwind, and Framer Motion with editable, downloadable, and responsive notes.",
+    tech: ["React", "Vite", "Tailwind", "Framer Motion"],
+    github: "https://github.com/yashikaBhandari/Noteapp",
+    live: "https://noteapp-peach.vercel.app",
   },
   {
     title: "Edge Detection Viewer",
@@ -46,13 +23,40 @@ const projects = [
     live: "https://edgeviewerdetector.vercel.app",
   },
   {
-    title: "React Notes App",
-    image: "/note.png",
-    description: "Beautiful, animated notes app built using React, Tailwind, and Framer Motion with editable, downloadable, and responsive notes.",
-    tech: ["React", "Vite", "Tailwind", "Framer Motion"],
-    github: "https://github.com/yashikaBhandari/Noteapp",
-    live: "https://noteapp-peach.vercel.app",
-  }
+    title: "AI Trip Planner",
+    image: "/trip.png",
+    description: "Suggests travel plans based on user inputs like location, budget, and interests.",
+    tech: ["MERN", "OpenAI API", "Tailwind"],
+
+    live: "https://ai-trip-planner.vercel.app",
+  },
+
+  {
+    title: "Virtual Herbal Garden",
+    image: "/gar.webp",
+    description: "Interactive, educational platform showcasing medicinal plants used in AYUSH.",
+    tech: ["React", "Firebase", "ML"],
+
+    live: "https://herbal-garden.vercel.app",
+  },
+  {
+    title: "Sentiment Classifier",
+    image: "/sent.png",
+    description: "Trained ML model on 1.5M Kaggle tweets with 79% accuracy using NLTK & scikit-learn.",
+    tech: ["Python", "NLP", "scikit-learn"],
+    github: "https://github.com/yashikaBhandari/Sentiment-_Analysis",
+    live: "",
+  },
+  {
+    title: "Book Finder",
+    image: "/book.png",
+    description: "Search engine for LeetCode problems with user-submitted solutions.",
+    tech: ["React", "MongoDB", "Express"],
+    github: "https://github.com/yashikaBhandari/leetcode-solutions",
+    live: "https://book-store-app-gold.vercel.app/",
+  },
+  
+
 ];
 
 
