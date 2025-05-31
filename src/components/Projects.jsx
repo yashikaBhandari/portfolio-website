@@ -19,7 +19,7 @@ const projects = [
     image: "/edge.jpg",
     description: "Web-based real-time edge detection using OpenCV.js, WebRTC, and WebGL. Built as a workaround to Android NDK limitations during FLAM's R&D internship assignment.",
     tech: ["JavaScript", "OpenCV.js", "WebRTC", "WebGL"],
-    github: "https://github.com/yashikaBhandari/edgedetectionviewer",
+    github: "https://github.com/yashikaBhandari/edgeviewerdetector",
     live: "https://edgeviewerdetector.vercel.app",
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     github: "https://github.com/yashikaBhandari/leetcode-solutions",
     live: "https://book-store-app-gold.vercel.app/",
   },
-  
+
 
 ];
 
